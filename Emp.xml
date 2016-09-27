@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<emp id="201319109">
+		<name>小赵</name>
+		<age>22</age>
+		<gender>男</gender>
+		<salary>4500</salary>
+	</emp>
+	
+	<emp id="201319110">
+		<name>小刘</name>
+		<age>22</age>
+		<gender>男</gender>
+		<salary>2500</salary>
+	</emp>
+	
+	<emp id="201319111">
+		<name>小王</name>
+		<age>22</age>
+		<gender>男</gender>
+		<salary>1500</salary>
+	</emp>
+</list>
