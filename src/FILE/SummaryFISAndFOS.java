@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 /**
- * 实现文件的复制
+ * 使用文件输入流和文件输出流实现文件的复制
  * @author Administrator
  *
  */
@@ -16,19 +16,21 @@ public class SummaryFISAndFOS {
 		 * 3.关闭输入流和输出流
 		 */
 		try {
+			long begin=System.currentTimeMillis();
 			//从输入流中读取数据
 			FileInputStream fis=new FileInputStream("FOSDemo.txt");
 			//向输出流中写入数据
 			FileOutputStream fos=new FileOutputStream("FISAndFOSDest.txt");
 			//先定义一个字节缓冲区，减少I/O次数，提高读写效率
-			byte[] buffer=new byte[1024];
+			byte[] buffer=new byte[10240];
 			int size=0;
 			while((size=fis.read(buffer))!=-1){
 				fos.write(buffer, 0, size);
 			}
 			fis.close();
 			fos.close();
-			System.out.println("文件复制完毕！");
+			long end=System.currentTimeMillis();
+			System.out.println("使用文件输入流和文件输出流实现文件的复制完毕！耗时："+(end-begin)+"毫秒");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
