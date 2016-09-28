@@ -30,6 +30,8 @@ public class SummaryBISAndBOS {
 			while((size=bis.read(buffer))!=-1){
 				bos.write(buffer, 0, size);
 			}
+			//刷新此缓冲的输出流，保证数据全部都能写出
+			bos.flush();
 			bis.close();
 			bos.close();
 			long end=System.currentTimeMillis();
