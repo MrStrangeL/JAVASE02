@@ -1,18 +1,18 @@
-package FILE;
+package FILEIO;
 
 import java.io.File;
 
 public class FileDemo01 {
 	/**
-	 * ╡И©╢╣╠г╟д©б╪обцФ╣дкЫспвсоН
+	 * О©╫И©╢О©╫О©╫г╟д©б╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
 	 * @param args
 	 */
 	public static void main(String[] args){
 		File  dir=new File(".");
-		//йвохеп╤ойг╡╩йгд©б╪
+		//О©╫О©╫О©╫О©╫О©╫п╤О©╫О©╫г╡О©╫О©╫О©╫д©б╪
 		if(dir.isDirectory())
 		{
-			//╩Ях║╦цд©б╪обцФ╣дкЫспвсоН
+			//О©╫О©╫х║О©╫О©╫д©б╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
 			File[] directoryList=dir.listFiles();
 			for (File file : directoryList) {
 				System.out.println(file.getName()+":"+file.length());

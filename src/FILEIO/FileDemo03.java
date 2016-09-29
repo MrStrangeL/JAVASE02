@@ -1,30 +1,30 @@
-package FILE;
+package FILEIO;
 
 import java.io.File;
 import java.io.IOException;
 
 /**
- * ´´½¨¶à¼¶Ä¿Â¼ÏÂÃæµÄÒ»¸öÎÄ¼þ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½à¼¶Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä¼ï¿½
  * @author Administrator
  *
  */
 public class FileDemo03 {
 	public static void main(String[] args){
 		File file=new File("a"+File.separator+"b"+File.separator+"c"+File.separator+"d.txt");
-		//ÏÈµÃµ½¸ÃÎÄ¼þµÄ¸¸Ä¿Â¼
+		//ï¿½ÈµÃµï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä¸ï¿½Ä¿Â¼
 		File parent=file.getParentFile();
-		//Èç¹û¸¸Ä¿Â¼²»´æÔÚ£¬Ôò±ØÐëÏÈ½«¸¸Ä¿Â¼´´½¨³öÀ´
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if(!parent.exists())
 		{
-			System.out.println("¸ÃÎÄ¼þµÄ¸¸Ä¿Â¼²»´æÔÚ£¬ÕýÔÚ´´½¨ÖÐ£¡");
-			//´´½¨¸ÃÎÄ¼þµÄËùÓÐ¸¸Ä¿Â¼
+			System.out.println("ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä¸ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ð£ï¿½");
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½Ä¿Â¼
 			if(parent.mkdirs()){
-				System.out.println("¸¸Ä¿Â¼´´½¨Íê±Ï£¡");
+				System.out.println("ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½");
 				if(!file.exists()){
 					try {
-						//´´½¨¸ÃÎÄ¼þ
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 						if(file.createNewFile()){
-							System.out.println("ÎÄ¼þ´´½¨Íê±Ï£¡");
+							System.out.println("ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½");
 						}
 					} catch (IOException e) {
 						// TODO Auto-generated catch block

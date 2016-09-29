@@ -1,4 +1,4 @@
-package FILE;
+package FILEIO;
 
 import java.io.File;
 import java.io.RandomAccessFile;

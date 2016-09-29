@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public class Person implements Serializable{
 	/**
-	 * 序列化的ID
+	 * 序列化的ID,只要加了该版本号，在反序列化的时候不论你的类的属性是否改变，只要是版本号不变
+	 * 那么会经可能的兼容新版本。
+	 * 如果版本号改变了，那么反序列化的过程中就会抛出异常。
 	 */
 	private static final long serialVersionUID = 6871740251451383067L;
 	private String name;

@@ -1,4 +1,4 @@
-package FILE;
+package FILEIO;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
