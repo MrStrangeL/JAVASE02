@@ -33,7 +33,21 @@ public class Person implements Serializable{
 	public int getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(int age)throws Exception {
+		if(age<=0||age>110){
+			/**
+			 * 通常情况下若方法中throw出一个异常实例，我们则必须处理该异常
+			 * 方法一：
+			 * 		为throw添加try  catch块
+			 * 方法二：
+			 * 		在当前方法上声明该类异常的抛出，以便于通知调用者处理该异常
+			 * 调用者依然遵循这两条
+			 * 
+			 * 语法正确但是不符合业务逻辑的时候我们就手动抛出异常
+			 */
+			//非检查异常
+			throw new RuntimeException("不是人类正常的年龄！");
+		}
 		this.age = age;
 	}
 	public char getSex() {
