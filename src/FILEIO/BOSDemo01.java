@@ -13,8 +13,8 @@ public class BOSDemo01 {
 		try {
 			FileOutputStream fos=new FileOutputStream("BOSDemo.txt");
 			BufferedOutputStream bos=new BufferedOutputStream(fos);
-			String content="缓冲输出流测试数据！";
-			bos.write(content.getBytes());
+			String content="我是缓冲输出流测试数据！";
+			bos.write(content.getBytes(),0,content.getBytes().length);
 			bos.flush();
 			bos.close();
 		} catch (Exception e) {
