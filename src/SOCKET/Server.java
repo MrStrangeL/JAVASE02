@@ -1,6 +1,10 @@
 package SOCKET;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -46,9 +50,40 @@ public class Server {
 			 */
 			System.out.println("服务端:等待客户端连接......");
 			Socket clientSocket=server.accept();
-			System.out.println("服务端:客户端连接了!");
+			
+			/**
+			 * 通过Socket获取远端的地址信息
+			 */
+			InetAddress clientAddress=clientSocket.getInetAddress();
+			//获取客户端的IP地址
+			String clientIP=clientAddress.getHostAddress();
+			//获取客户端的端口号
+			int clientPort=clientSocket.getPort();
+			System.out.println("服务端:客户端["+clientIP+":"+clientPort+"]连接了!");
+			
+			/**
+			 * 通过刚刚连上的客户端的Socket来获取输入流，来读取客户端发送过来的消息
+			 */
+			InputStream serverIS=clientSocket.getInputStream();
+			
+			/**
+			 * 将字节流转换为字符流
+			 */
+			InputStreamReader serverISR=new InputStreamReader(serverIS, "UTF-8");
+			
+			/**
+			 * 将字符流包装为缓冲字符输入流
+			 */
+			BufferedReader serverBR=new BufferedReader(serverISR);
+			/**
+			 * 通过键盘循环的发送消息
+			 */
+			while(true){
+				String content=serverBR.readLine();
+				System.out.println(clientIP+":"+clientPort+":"+content);
+			}
 		} catch (Exception e) {
-
+				e.printStackTrace();
 		}
 	}
 	

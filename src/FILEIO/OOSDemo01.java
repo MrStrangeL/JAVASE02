@@ -20,10 +20,10 @@ public class OOSDemo01 {
 	public static void main(String[] args){
 		try {
 			ArrayList<String> other=new ArrayList<String>();
-			other.add("华北水利水电大学");
+			other.add("清华大学");
 			other.add("软件学院");
-			other.add("软件工程(娱乐软件设计)");
-			Person person=new Person("赵亮", 22, '男', other);
+			other.add("软件工程");
+			Person person=new Person("小明", 22, '男', other);
 			FileOutputStream fos=new FileOutputStream("OOS.txt");
 			ObjectOutputStream oos=new ObjectOutputStream(fos);
 			//将一个对象经行序列化时需要实现Serializable接口
