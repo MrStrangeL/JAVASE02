@@ -140,6 +140,7 @@ public class Server2 {
 				//获取客户端的端口号
 				int clientPort=clientSocket.getPort();
 				System.out.println("服务端:客户端["+clientIP+":"+clientPort+"]连接了!");
+				sendMessage("服务端:客户端["+clientIP+":"+clientPort+"]连接了!");
 			}
 			
 			/**
@@ -149,15 +150,15 @@ public class Server2 {
 			@Override
 			public void run() {
 				PrintWriter serverPW=null;
+				/**
+				 * 通过Socket获取远端的地址信息
+				 */
+				InetAddress clientAddress=clientSocket.getInetAddress();
+				//获取客户端的IP地址
+				String clientIP=clientAddress.getHostAddress();
+				//获取客户端的端口号
+				int clientPort=clientSocket.getPort();
 				try {
-					/**
-					 * 通过Socket获取远端的地址信息
-					 */
-					InetAddress clientAddress=clientSocket.getInetAddress();
-					//获取客户端的IP地址
-					String clientIP=clientAddress.getHostAddress();
-					//获取客户端的端口号
-					int clientPort=clientSocket.getPort();
 					
 					//为了让服务端与客户端发送信息,我们需要通过Socket获取输出流
 					/**
@@ -218,7 +219,7 @@ public class Server2 {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-					System.out.println("一个客户端下线了!");
+					sendMessage("服务端:客户端:["+clientIP+":"+clientPort+"]下线了!");
 				}
 			}
 			
