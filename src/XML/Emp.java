@@ -1,9 +1,9 @@
 package XML;
 
 /**
- * ¸ÃÀàÓÃÓÚÃèÊöEmp.xmlÎÄ¼şÖĞ±íÊ¾µÄÔ±¹¤
- * @author 18325
- *
+ * ç”±äºæè¿°Emp.xmlæ–‡ä»¶ä¸­è¡¨ç¤ºçš„å‘˜å·¥
+ * @author ä½œè€… E-mail:1832567496@qq.com
+ * @date åˆ›å»ºæ—¶é—´ï¼š2016å¹´10æœˆ6æ—¥ ä¸‹åˆ6:13:48
  */
 public class Emp {
 	private long id;
