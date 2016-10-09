@@ -26,6 +26,7 @@ public class PWDemo01 {
 			PrintWriter pw=new PrintWriter(osw, true); 
 			pw.println("字符缓冲");
 			pw.append("测试数据");
+			pw.write("哈哈哈");
 			pw.close();
 		} catch (Exception e) {
 			e.printStackTrace();

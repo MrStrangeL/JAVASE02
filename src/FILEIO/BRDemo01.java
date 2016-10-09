@@ -14,20 +14,34 @@ import java.io.InputStreamReader;
 public class BRDemo01 {
 	public static void main(String[] args) {
 		try {
+			/**
+			 * 逐个字符的读取
+			 */
 			FileInputStream fis=new FileInputStream("pw.txt");
 			InputStreamReader isr=new InputStreamReader(fis, "UTF-8");
 			BufferedReader br=new BufferedReader(isr);
-			
-			/**
-			 * public String readLine()
-			 * 该方法的返回值如果为null，则说明数据已经没有了
-			 */
 			int size=0;
 			while((size=br.read())!=-1){
 				char content=(char)size;
 				System.out.println(content);
 			}
+			
+			/**
+			 * 整行读取
+			 */
+			FileInputStream fis1=new FileInputStream("pw.txt");
+			InputStreamReader isr1=new InputStreamReader(fis1, "UTF-8");
+			BufferedReader br1=new BufferedReader(isr1);
+			String isNull=null;
+			/**
+			 * public String readLine()
+			 * 该方法的返回值如果为null，则说明数据已经没有了
+			 */
+			while((isNull=br1.readLine())!=null){
+				System.out.println(isNull);
+			}
 			br.close();
+			br1.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

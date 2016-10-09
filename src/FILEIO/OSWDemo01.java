@@ -19,10 +19,12 @@ public class OSWDemo01 {
 		 * 按照特定的字符集转换为字节后写出
 		 */
 		try {
+			//定义一个文件输出流
 			FileOutputStream fos=new FileOutputStream("OSW.txt");
+			//将文件输出流包装为字符输出流
 			OutputStreamWriter osw=new OutputStreamWriter(fos, "UTF-8");
-			osw.write("你是我最爱的人");
-			osw.append("哈哈哈哈！");
+			osw.write("You are my wife!");
+			osw.append("I love you.");
 			osw.flush();
 			osw.close();
 		} catch (Exception e) {
